@@ -3,7 +3,6 @@
 #include "imgui\imgui_impl_opengl3.h"
 #include <stdio.h>
 
-#define GLEW_STATIC
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
 #include <SOIL2\SOIL2.h>
@@ -132,7 +131,7 @@ void display(GLFWwindow *window, double currentTime) {
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
-    ImGui::Begin("Proyecto de Computacion Gráfica");                          // Create a window called "Hello, world!" and append into it.
+    ImGui::Begin("Renderizado de piramide");                          // Create a window called "Hello, world!" and append into it.
     ImGui::Text("Escoja la velocidad:");               // Display some text (you can use a format strings too)
     ImGui::Checkbox("Mover rapido?", &fast);      // Edit bools storing our window open/close state
     ImGui::Checkbox("Dibujar piramide?", &piramide);      // Edit bools storing our window open/close state
@@ -156,7 +155,7 @@ int main() {
     if (!glfwInit()) exit(EXIT_FAILURE);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
-    GLFWwindow * window = glfwCreateWindow(600, 600, R"( Proyecto-CG )", NULL, NULL);
+    GLFWwindow * window = glfwCreateWindow(600, 600, "EX3", NULL, NULL);
     glfwMakeContextCurrent(window);
     if (glewInit() != GLEW_OK) exit(EXIT_FAILURE);
     glfwSwapInterval(1);

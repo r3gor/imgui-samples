@@ -56,7 +56,8 @@ void init(GLFWwindow *window){
 }
 
 void display(){
-    
+
+    glClear(GL_DEPTH_BUFFER_BIT);
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(0.9,0.8,0.7, 1.0);
 
@@ -96,13 +97,10 @@ void display(){
 
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
-
-
     /*--[RENDER IMGUI]-----------*/
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     /*--[RENDER IMGUI]-----------*/
-
 
 }
 

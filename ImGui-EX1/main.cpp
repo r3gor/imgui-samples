@@ -5,6 +5,8 @@
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
 
+#include <iostream>
+
 void init(GLFWwindow *window){
 
 
@@ -37,7 +39,12 @@ void display(){
     ImGui::Begin("Hello, friend!"); // Aqui inicia una pequeña ventana
     ImGui::Text("Esto es un texto de prueba >:).");
     ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate); // Muestra los FPS de la aplicación
+    if (ImGui::Button("Saludar")){
+    	std::cout<<"Hola"<<std::endl;
+    }
     ImGui::End(); // Aqui termina la ventana ultima en iniciar
+
+
     /*--[CODIGO IMGUI]-----------*/
 
 

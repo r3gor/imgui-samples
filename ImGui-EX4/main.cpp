@@ -94,6 +94,10 @@ void display(GLFWwindow *window, double currentTime){
     ImGui::Separator();
     ImGui::Text("Rendimiento %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
     ImGui::Separator();
+    if (ImGui::CollapsingHeader("Articulo")){
+    	ImGui::TextColored(ImVec4(1.0, 1.0, 0.0, 1.0), "Gratis, disponible en:");
+    	ImGui::Text("https://regor.home.blog/2020/09/09/mandelbrot-set-opengl3/");
+    }
     ImGui::End();
 
     glClearColor(0.3f, 0.6f, 0.9f, 0.95f);

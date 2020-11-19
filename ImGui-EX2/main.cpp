@@ -12,11 +12,6 @@
 
 #include "fun.h"
 
-/*
-#define WIDTH 1280
-#define HEIGHT 720
-*/
-
 #define WIDTH 400
 #define HEIGHT 500
 
@@ -97,6 +92,7 @@ void display(){
 
     ImGuiStyle& style = ImGui::GetStyle();    
     style.FrameBorderSize = 1.0f;
+
     ImGuiWindowFlags window_flags = 0;
     window_flags |= ImGuiWindowFlags_MenuBar;
     window_flags |= ImGuiWindowFlags_NoCollapse;

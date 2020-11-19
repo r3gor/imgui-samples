@@ -106,7 +106,7 @@ void display(GLFWwindow *window){
     ImGui::SliderFloat("tras. y", &tras_y, -10, 10);
     ImGui::SliderFloat("tras. z", &tras_z, -10, 10);
     ImGui::Text("Rotaciones");
-	ImGui::SliderFloat("rota. x", &rota_x, -3.14 * 2.0, 3.14 * 2.0);
+	ImGui::SliderFloat("x", &rota_x, -3.14 * 2.0, 3.14 * 2.0);
 	ImGui::SliderFloat("rota. y", &rota_y, -3.14 * 2.0, 3.14 * 2.0);
 	ImGui::SliderFloat("rota. z", &rota_z, -3.14 * 2.0, 3.14 * 2.0);
 	ImGui::Text("Escalamiento");

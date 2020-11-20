@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POO-OpenGL: Fichero Fuente src/app.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">POO-OpenGL
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">app.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="app_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef APP_CPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define APP_CPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;imgui\imgui.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;imgui\imgui_impl_glfw.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;imgui\imgui_impl_opengl3.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;GL\glew.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;GLFW\glfw3.h&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;glm\glm.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;glm\gtc\type_ptr.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;glm\gtc\matrix_transform.hpp&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="controls_8hpp.html">controls.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="imgui__win_8hpp.html">imgui_win.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8hpp.html">utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shape_8h.html">shape.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="shader_8h.html">shader.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_app_open_g_l.html">AppOpenGL</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    glm::mat4 projMat;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    glm::mat4 modelviewMat;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    glm::mat4 viewMat;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a0d69a9be48d8291c3c30d3a8e0c64b58">   37</a></span>&#160;    <a class="code" href="class_app_open_g_l.html#a0d69a9be48d8291c3c30d3a8e0c64b58">AppOpenGL</a>() {}</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#abeef8302eede2b6527bf99859e8f09ff">init</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#ab924cf0ad36fc9a6b6094e39ff84c410">setup</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#a8e3c91b95818cd8ad54afa836d18bc73">display</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#a223225667331f6ca9a3f7f8113ade8d5">cleanAll</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_app_open_g_l.html#a9f46f510547d16676503bb6ee1b7408f">shouldClose</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">   43</a></span>&#160;    GLFWwindow *<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a270bb37de05af6ac2acf2fd7f882db96">   44</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_app_open_g_l.html#a270bb37de05af6ac2acf2fd7f882db96">width</a>, <a class="code" href="class_app_open_g_l.html#a6c82422a5677f7040743b2bd3ea43c8d">heigth</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a2abc8d0e83b81332af6ecd1f78e9c27d">   45</a></span>&#160;    glm::vec3 <a class="code" href="class_app_open_g_l.html#a2abc8d0e83b81332af6ecd1f78e9c27d">camera</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">   47</a></span>&#160;    <a class="code" href="class_shader.html">Shader</a> <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>{<span class="stringliteral">&quot;src/vertex.glsl&quot;</span>, <span class="stringliteral">&quot;src/fragment.glsl&quot;</span>};</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a91f53248a0a4f296621b4f757ffe8b5c">   49</a></span>&#160;    <a class="code" href="class_shape.html">Shape</a> <a class="code" href="class_app_open_g_l.html#a91f53248a0a4f296621b4f757ffe8b5c">myShape</a>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#abeef8302eede2b6527bf99859e8f09ff">   52</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#abeef8302eede2b6527bf99859e8f09ff">AppOpenGL::init</a>()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_app_open_g_l.html#a270bb37de05af6ac2acf2fd7f882db96">width</a> = 800;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_app_open_g_l.html#a6c82422a5677f7040743b2bd3ea43c8d">heigth</a> = 800;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_app_open_g_l.html#a2abc8d0e83b81332af6ecd1f78e9c27d">camera</a> = glm::vec3(0, 0, 8.0);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (!glfwInit())</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;GLFW Error&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a> = glfwCreateWindow(<a class="code" href="class_app_open_g_l.html#a270bb37de05af6ac2acf2fd7f882db96">width</a>, <a class="code" href="class_app_open_g_l.html#a6c82422a5677f7040743b2bd3ea43c8d">heigth</a>, <span class="stringliteral">&quot;Template-POO&quot;</span>, NULL, NULL);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    glfwMakeContextCurrent(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// glew init</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (glewInit() != GLEW_OK)</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;GLEW Error&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    glfwSwapInterval(0);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    glfwSetCursorPosCallback(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>, <a class="code" href="namespace_controls.html#afbcaf678ca56ccef8aa91c91cf61c323">Controls::cursor_position_callback</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    glfwSetMouseButtonCallback(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>, <a class="code" href="namespace_controls.html#ab01fbbe42050259077d50617ff408431">Controls::mouse_button_callback</a>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    glfwSetScrollCallback(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>, <a class="code" href="namespace_controls.html#a9c312d25e0112c67b47d4c944e0eff78">Controls::scroll_callback</a>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    glfwSetKeyCallback(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>, <a class="code" href="namespace_controls.html#a88b0c2b0286bb6cf6f11ce1f9bcaabf2">Controls::key_callback</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    glfwSetWindowSizeCallback(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>, <a class="code" href="namespace_controls.html#adb3580886429c1f945d8e63e4b84acdc">Controls::window_size_callback</a>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// imgui init</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ImGui::CreateContext();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ImGuiIO &amp;io = ImGui::GetIO();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    (void)io;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ImGui::StyleColorsDark();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ImGui_ImplGlfw_InitForOpenGL(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ImGui_ImplOpenGL3_Init(<span class="stringliteral">&quot;#version 130&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#ab924cf0ad36fc9a6b6094e39ff84c410">   95</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#ab924cf0ad36fc9a6b6094e39ff84c410">AppOpenGL::setup</a>()</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#a5be69e48ac2436651ead777bf5fb5c9f">compile</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#aadbc0ca0d899238d547f87f19461dfeb">bind</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">int</span> w, h;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    glfwGetWindowSize(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>, &amp;w, &amp;h);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    projMat = glm::perspective(1.0472f, (<span class="keywordtype">float</span>)w / (<span class="keywordtype">float</span>)h, 0.1f, 1000.0f);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="namespace_controls.html#aacf5139c8e407e4b51e5b0ecd0fd0022">Controls::pMat</a> = projMat;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;   </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="class_app_open_g_l.html#a91f53248a0a4f296621b4f757ffe8b5c">myShape</a>.<a class="code" href="class_shape.html#a0b44a4ff8cf8683eb660a73cd9fd43b5">initData</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    viewMat = glm::translate(glm::mat4(1.0), glm::vec3(-<a class="code" href="class_app_open_g_l.html#a2abc8d0e83b81332af6ecd1f78e9c27d">camera</a>.x, -<a class="code" href="class_app_open_g_l.html#a2abc8d0e83b81332af6ecd1f78e9c27d">camera</a>.y, -<a class="code" href="class_app_open_g_l.html#a2abc8d0e83b81332af6ecd1f78e9c27d">camera</a>.z));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a8e3c91b95818cd8ad54afa836d18bc73">  111</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#a8e3c91b95818cd8ad54afa836d18bc73">AppOpenGL::display</a>()</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#aadbc0ca0d899238d547f87f19461dfeb">bind</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    modelviewMat = viewMat;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    modelviewMat *= <a class="code" href="namespace_controls.html#a1d3068a08f398aaf95adff009dbd974b">Controls::getTransf</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#a8029ee0ddda30e14298cd54f6b7424bd">setUniformMat4fv</a>(<span class="stringliteral">&quot;mv_matrix&quot;</span>, modelviewMat);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#a8029ee0ddda30e14298cd54f6b7424bd">setUniformMat4fv</a>(<span class="stringliteral">&quot;proj_matrix&quot;</span>, <a class="code" href="namespace_controls.html#aacf5139c8e407e4b51e5b0ecd0fd0022">Controls::pMat</a>);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespace_im_gui_win.html#a0535fd8ca21211c9cec184f93a793764">ImGuiWin::multicolor</a> == <span class="keyword">false</span>){</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#a37f56eb57e40cd6bdf8235c810f207a8">setUniform1i</a>(<span class="stringliteral">&quot;multicolor&quot;</span>, 0);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespace_im_gui_win.html#a0535fd8ca21211c9cec184f93a793764">ImGuiWin::multicolor</a> == <span class="keyword">true</span>){</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#a37f56eb57e40cd6bdf8235c810f207a8">setUniform1i</a>(<span class="stringliteral">&quot;multicolor&quot;</span>, 1);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    } </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="namespace_controls.html#aefac046c8a5bdbeb66a6888745d6152c">Controls::velocidadMov</a> = <a class="code" href="namespace_im_gui_win.html#a36e8cb0eeb241b21362f9986f523bcea">ImGuiWin::vel_mov</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    glClearColor(<a class="code" href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">ImGuiWin::fondo</a>.x,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                 <a class="code" href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">ImGuiWin::fondo</a>.y,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                 <a class="code" href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">ImGuiWin::fondo</a>.z,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                 <a class="code" href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">ImGuiWin::fondo</a>.w);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    glEnable(GL_DEPTH_TEST);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    glDepthFunc(GL_LEQUAL);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    glEnable(GL_LINE_SMOOTH);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    glLineWidth(2.5); <span class="comment">// &quot;ancho&quot; de lineas</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    glm::vec3 color;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    color = glm::vec3(<a class="code" href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">ImGuiWin::color_figura</a>.x,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                      <a class="code" href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">ImGuiWin::color_figura</a>.y,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                      <a class="code" href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">ImGuiWin::color_figura</a>.z);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <a class="code" href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">ShaderProgram</a>.<a class="code" href="class_shader.html#af18888dd35d531cee76975dafca237a1">setUniform3fv</a>(<span class="stringliteral">&quot;u_color&quot;</span>, color);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="namespace_im_gui_win.html#a823ad27e2d3d1c7f2c057dd07d38102e">ImGuiWin::render_shape</a>)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="class_app_open_g_l.html#a91f53248a0a4f296621b4f757ffe8b5c">myShape</a>.<a class="code" href="class_shape.html#aaebf3185d27982d87bb3451fa42ff43e">render</a>();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="namespace_im_gui_win.html#a109f538a7f4f491a1b593378ce6f304a">ImGuiWin::renderMainWindow</a>();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="namespace_im_gui_win.html#afdbf56f28d86913955ad52bab5d5612c">ImGuiWin::endMainWindow</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    glfwPollEvents();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    glfwSwapBuffers(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a223225667331f6ca9a3f7f8113ade8d5">  162</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_app_open_g_l.html#a223225667331f6ca9a3f7f8113ade8d5">AppOpenGL::cleanAll</a>()</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;{</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="namespace_im_gui_win.html#ad70310cae3f568bb6659fc1c5a135ed0">ImGuiWin::cleanAll</a>();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    glfwDestroyWindow(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    glfwTerminate();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="class_app_open_g_l.html#a9f46f510547d16676503bb6ee1b7408f">  169</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_app_open_g_l.html#a9f46f510547d16676503bb6ee1b7408f">AppOpenGL::shouldClose</a>()</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> glfwWindowShouldClose(<a class="code" href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">window</a>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_app_open_g_l_html_a0d69a9be48d8291c3c30d3a8e0c64b58"><div class="ttname"><a href="class_app_open_g_l.html#a0d69a9be48d8291c3c30d3a8e0c64b58">AppOpenGL::AppOpenGL</a></div><div class="ttdeci">AppOpenGL()</div><div class="ttdef"><b>Definition:</b> app.hpp:37</div></div>
+<div class="ttc" id="ashape_8h_html"><div class="ttname"><a href="shape_8h.html">shape.h</a></div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_ab924cf0ad36fc9a6b6094e39ff84c410"><div class="ttname"><a href="class_app_open_g_l.html#ab924cf0ad36fc9a6b6094e39ff84c410">AppOpenGL::setup</a></div><div class="ttdeci">void setup()</div><div class="ttdef"><b>Definition:</b> app.hpp:95</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a6c82422a5677f7040743b2bd3ea43c8d"><div class="ttname"><a href="class_app_open_g_l.html#a6c82422a5677f7040743b2bd3ea43c8d">AppOpenGL::heigth</a></div><div class="ttdeci">int heigth</div><div class="ttdef"><b>Definition:</b> app.hpp:44</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a823ad27e2d3d1c7f2c057dd07d38102e"><div class="ttname"><a href="namespace_im_gui_win.html#a823ad27e2d3d1c7f2c057dd07d38102e">ImGuiWin::render_shape</a></div><div class="ttdeci">bool render_shape</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:23</div></div>
+<div class="ttc" id="autils_8hpp_html"><div class="ttname"><a href="utils_8hpp.html">utils.hpp</a></div></div>
+<div class="ttc" id="anamespace_controls_html_aefac046c8a5bdbeb66a6888745d6152c"><div class="ttname"><a href="namespace_controls.html#aefac046c8a5bdbeb66a6888745d6152c">Controls::velocidadMov</a></div><div class="ttdeci">double velocidadMov</div><div class="ttdef"><b>Definition:</b> controls.hpp:28</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a5deb1d776bcfe94c5d0a67968a8fe7a9"><div class="ttname"><a href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">ImGuiWin::fondo</a></div><div class="ttdeci">ImVec4 fondo</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:19</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_afdbf56f28d86913955ad52bab5d5612c"><div class="ttname"><a href="namespace_im_gui_win.html#afdbf56f28d86913955ad52bab5d5612c">ImGuiWin::endMainWindow</a></div><div class="ttdeci">void endMainWindow()</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:66</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a36e8cb0eeb241b21362f9986f523bcea"><div class="ttname"><a href="namespace_im_gui_win.html#a36e8cb0eeb241b21362f9986f523bcea">ImGuiWin::vel_mov</a></div><div class="ttdeci">float vel_mov</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:24</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_add2e69787b404e558ef1735d2968a1aa"><div class="ttname"><a href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">ImGuiWin::color_figura</a></div><div class="ttdeci">ImVec4 color_figura</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:20</div></div>
+<div class="ttc" id="aclass_shader_html_a8029ee0ddda30e14298cd54f6b7424bd"><div class="ttname"><a href="class_shader.html#a8029ee0ddda30e14298cd54f6b7424bd">Shader::setUniformMat4fv</a></div><div class="ttdeci">void setUniformMat4fv(const std::string &amp;name, glm::mat4 mat)</div><div class="ttdef"><b>Definition:</b> shader.cpp:66</div></div>
+<div class="ttc" id="aclass_shape_html_aaebf3185d27982d87bb3451fa42ff43e"><div class="ttname"><a href="class_shape.html#aaebf3185d27982d87bb3451fa42ff43e">Shape::render</a></div><div class="ttdeci">void render() const</div><div class="ttdef"><b>Definition:</b> shape.cpp:21</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a109f538a7f4f491a1b593378ce6f304a"><div class="ttname"><a href="namespace_im_gui_win.html#a109f538a7f4f491a1b593378ce6f304a">ImGuiWin::renderMainWindow</a></div><div class="ttdeci">void renderMainWindow()</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:26</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html"><div class="ttname"><a href="class_app_open_g_l.html">AppOpenGL</a></div><div class="ttdef"><b>Definition:</b> app.hpp:30</div></div>
+<div class="ttc" id="aclass_shader_html_af18888dd35d531cee76975dafca237a1"><div class="ttname"><a href="class_shader.html#af18888dd35d531cee76975dafca237a1">Shader::setUniform3fv</a></div><div class="ttdeci">void setUniform3fv(const std::string &amp;name, glm::vec3 vec)</div><div class="ttdef"><b>Definition:</b> shader.cpp:72</div></div>
+<div class="ttc" id="aclass_shader_html_a37f56eb57e40cd6bdf8235c810f207a8"><div class="ttname"><a href="class_shader.html#a37f56eb57e40cd6bdf8235c810f207a8">Shader::setUniform1i</a></div><div class="ttdeci">void setUniform1i(const std::string &amp;name, int val)</div><div class="ttdef"><b>Definition:</b> shader.cpp:78</div></div>
+<div class="ttc" id="anamespace_controls_html_a88b0c2b0286bb6cf6f11ce1f9bcaabf2"><div class="ttname"><a href="namespace_controls.html#a88b0c2b0286bb6cf6f11ce1f9bcaabf2">Controls::key_callback</a></div><div class="ttdeci">void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)</div><div class="ttdef"><b>Definition:</b> controls.hpp:91</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a9f46f510547d16676503bb6ee1b7408f"><div class="ttname"><a href="class_app_open_g_l.html#a9f46f510547d16676503bb6ee1b7408f">AppOpenGL::shouldClose</a></div><div class="ttdeci">bool shouldClose()</div><div class="ttdef"><b>Definition:</b> app.hpp:169</div></div>
+<div class="ttc" id="acontrols_8hpp_html"><div class="ttname"><a href="controls_8hpp.html">controls.hpp</a></div></div>
+<div class="ttc" id="anamespace_controls_html_a1d3068a08f398aaf95adff009dbd974b"><div class="ttname"><a href="namespace_controls.html#a1d3068a08f398aaf95adff009dbd974b">Controls::getTransf</a></div><div class="ttdeci">glm::mat4 getTransf()</div><div class="ttdef"><b>Definition:</b> controls.hpp:43</div></div>
+<div class="ttc" id="aclass_shape_html"><div class="ttname"><a href="class_shape.html">Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:8</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a33f23b66f6aded42fff2223b6b35bd84"><div class="ttname"><a href="class_app_open_g_l.html#a33f23b66f6aded42fff2223b6b35bd84">AppOpenGL::window</a></div><div class="ttdeci">GLFWwindow * window</div><div class="ttdef"><b>Definition:</b> app.hpp:43</div></div>
+<div class="ttc" id="aclass_shape_html_a0b44a4ff8cf8683eb660a73cd9fd43b5"><div class="ttname"><a href="class_shape.html#a0b44a4ff8cf8683eb660a73cd9fd43b5">Shape::initData</a></div><div class="ttdeci">void initData()</div><div class="ttdef"><b>Definition:</b> shape.cpp:11</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a2abc8d0e83b81332af6ecd1f78e9c27d"><div class="ttname"><a href="class_app_open_g_l.html#a2abc8d0e83b81332af6ecd1f78e9c27d">AppOpenGL::camera</a></div><div class="ttdeci">glm::vec3 camera</div><div class="ttdef"><b>Definition:</b> app.hpp:45</div></div>
+<div class="ttc" id="anamespace_controls_html_ab01fbbe42050259077d50617ff408431"><div class="ttname"><a href="namespace_controls.html#ab01fbbe42050259077d50617ff408431">Controls::mouse_button_callback</a></div><div class="ttdeci">void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)</div><div class="ttdef"><b>Definition:</b> controls.hpp:78</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a223225667331f6ca9a3f7f8113ade8d5"><div class="ttname"><a href="class_app_open_g_l.html#a223225667331f6ca9a3f7f8113ade8d5">AppOpenGL::cleanAll</a></div><div class="ttdeci">void cleanAll()</div><div class="ttdef"><b>Definition:</b> app.hpp:162</div></div>
+<div class="ttc" id="aimgui__win_8hpp_html"><div class="ttname"><a href="imgui__win_8hpp.html">imgui_win.hpp</a></div></div>
+<div class="ttc" id="anamespace_controls_html_aacf5139c8e407e4b51e5b0ecd0fd0022"><div class="ttname"><a href="namespace_controls.html#aacf5139c8e407e4b51e5b0ecd0fd0022">Controls::pMat</a></div><div class="ttdeci">glm::mat4 pMat</div><div class="ttdef"><b>Definition:</b> controls.hpp:31</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a91f53248a0a4f296621b4f757ffe8b5c"><div class="ttname"><a href="class_app_open_g_l.html#a91f53248a0a4f296621b4f757ffe8b5c">AppOpenGL::myShape</a></div><div class="ttdeci">Shape myShape</div><div class="ttdef"><b>Definition:</b> app.hpp:49</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a270bb37de05af6ac2acf2fd7f882db96"><div class="ttname"><a href="class_app_open_g_l.html#a270bb37de05af6ac2acf2fd7f882db96">AppOpenGL::width</a></div><div class="ttdeci">int width</div><div class="ttdef"><b>Definition:</b> app.hpp:44</div></div>
+<div class="ttc" id="anamespace_controls_html_afbcaf678ca56ccef8aa91c91cf61c323"><div class="ttname"><a href="namespace_controls.html#afbcaf678ca56ccef8aa91c91cf61c323">Controls::cursor_position_callback</a></div><div class="ttdeci">void cursor_position_callback(GLFWwindow *window, double xpos, double ypos)</div><div class="ttdef"><b>Definition:</b> controls.hpp:54</div></div>
+<div class="ttc" id="aclass_shader_html_aadbc0ca0d899238d547f87f19461dfeb"><div class="ttname"><a href="class_shader.html#aadbc0ca0d899238d547f87f19461dfeb">Shader::bind</a></div><div class="ttdeci">void bind() const</div><div class="ttdef"><b>Definition:</b> shader.cpp:24</div></div>
+<div class="ttc" id="ashader_8h_html"><div class="ttname"><a href="shader_8h.html">shader.h</a></div></div>
+<div class="ttc" id="aclass_shader_html"><div class="ttname"><a href="class_shader.html">Shader</a></div><div class="ttdef"><b>Definition:</b> shader.h:11</div></div>
+<div class="ttc" id="aclass_shader_html_a5be69e48ac2436651ead777bf5fb5c9f"><div class="ttname"><a href="class_shader.html#a5be69e48ac2436651ead777bf5fb5c9f">Shader::compile</a></div><div class="ttdeci">void compile()</div><div class="ttdef"><b>Definition:</b> shader.cpp:19</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_ad70310cae3f568bb6659fc1c5a135ed0"><div class="ttname"><a href="namespace_im_gui_win.html#ad70310cae3f568bb6659fc1c5a135ed0">ImGuiWin::cleanAll</a></div><div class="ttdeci">void cleanAll()</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:72</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_aa202118ceed7fc7e41d6d4452befd6a9"><div class="ttname"><a href="class_app_open_g_l.html#aa202118ceed7fc7e41d6d4452befd6a9">AppOpenGL::ShaderProgram</a></div><div class="ttdeci">Shader ShaderProgram</div><div class="ttdef"><b>Definition:</b> app.hpp:47</div></div>
+<div class="ttc" id="anamespace_controls_html_adb3580886429c1f945d8e63e4b84acdc"><div class="ttname"><a href="namespace_controls.html#adb3580886429c1f945d8e63e4b84acdc">Controls::window_size_callback</a></div><div class="ttdeci">void window_size_callback(GLFWwindow *win, int newWidth, int newHeight)</div><div class="ttdef"><b>Definition:</b> controls.hpp:48</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a0535fd8ca21211c9cec184f93a793764"><div class="ttname"><a href="namespace_im_gui_win.html#a0535fd8ca21211c9cec184f93a793764">ImGuiWin::multicolor</a></div><div class="ttdeci">bool multicolor</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:22</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_a8e3c91b95818cd8ad54afa836d18bc73"><div class="ttname"><a href="class_app_open_g_l.html#a8e3c91b95818cd8ad54afa836d18bc73">AppOpenGL::display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> app.hpp:111</div></div>
+<div class="ttc" id="anamespace_controls_html_a9c312d25e0112c67b47d4c944e0eff78"><div class="ttname"><a href="namespace_controls.html#a9c312d25e0112c67b47d4c944e0eff78">Controls::scroll_callback</a></div><div class="ttdeci">void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)</div><div class="ttdef"><b>Definition:</b> controls.hpp:110</div></div>
+<div class="ttc" id="aclass_app_open_g_l_html_abeef8302eede2b6527bf99859e8f09ff"><div class="ttname"><a href="class_app_open_g_l.html#abeef8302eede2b6527bf99859e8f09ff">AppOpenGL::init</a></div><div class="ttdeci">void init()</div><div class="ttdef"><b>Definition:</b> app.hpp:52</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>POO-OpenGL: Fichero Fuente src/imgui_win.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">POO-OpenGL
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">imgui_win.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="imgui__win_8hpp.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IMGUIWIN_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IMGUIWIN_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Windows.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;imgui\imgui.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;imgui\imgui_impl_glfw.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;imgui\imgui_impl_opengl3.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;GL\glew.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;GLFW\glfw3.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;glm\glm.hpp&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;glm\gtc\type_ptr.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;glm\gtc\matrix_transform.hpp&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html">   17</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_im_gui_win.html">ImGuiWin</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">   19</a></span>&#160;    ImVec4 <a class="code" href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">fondo</a> = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">   20</a></span>&#160;    ImVec4 <a class="code" href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">color_figura</a> = ImVec4(0.2f, 0.85f, 0.2f, 1.00f);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#a0535fd8ca21211c9cec184f93a793764">   22</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespace_im_gui_win.html#a0535fd8ca21211c9cec184f93a793764">multicolor</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#a823ad27e2d3d1c7f2c057dd07d38102e">   23</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="namespace_im_gui_win.html#a823ad27e2d3d1c7f2c057dd07d38102e">render_shape</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#a36e8cb0eeb241b21362f9986f523bcea">   24</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="namespace_im_gui_win.html#a36e8cb0eeb241b21362f9986f523bcea">vel_mov</a> = 0.4;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#a109f538a7f4f491a1b593378ce6f304a">   26</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_im_gui_win.html#a109f538a7f4f491a1b593378ce6f304a">renderMainWindow</a>()</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        ImGui_ImplOpenGL3_NewFrame();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        ImGui_ImplGlfw_NewFrame();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        ImGui::NewFrame();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        ImGui::Begin(<span class="stringliteral">&quot;ImGui-Window&quot;</span>);     </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="comment">/* COLOR EDIT */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            ImGui::TextColored(ImVec4(1,1,0,1), <span class="stringliteral">&quot;Color&quot;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            ImGui::Indent();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                ImGui::ColorEdit3(<span class="stringliteral">&quot;Color Fondo&quot;</span>, (<span class="keywordtype">float</span> *)&amp;<a class="code" href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">fondo</a>);         </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                ImGui::ColorEdit3(<span class="stringliteral">&quot;Color Shape&quot;</span>, (<span class="keywordtype">float</span> *)&amp;<a class="code" href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">color_figura</a>); </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                ImGui::Checkbox(<span class="stringliteral">&quot;Modo Multicolor&quot;</span>, &amp;<a class="code" href="namespace_im_gui_win.html#a0535fd8ca21211c9cec184f93a793764">multicolor</a>); </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            ImGui::Unindent();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="comment">/* SHAPES */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            ImGui::TextColored(ImVec4(1,1,0,1), <span class="stringliteral">&quot;Shape&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            ImGui::Indent();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                ImGui::Checkbox(<span class="stringliteral">&quot;Pintar&quot;</span>, &amp;<a class="code" href="namespace_im_gui_win.html#a823ad27e2d3d1c7f2c057dd07d38102e">render_shape</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            ImGui::Unindent();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            ImGui::TextColored(ImVec4(1,1,0,1), <span class="stringliteral">&quot;Velocidad&quot;</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            ImGui::Indent();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                ImGui::SliderFloat(<span class="stringliteral">&quot;Vel. mov.&quot;</span>, &amp;<a class="code" href="namespace_im_gui_win.html#a36e8cb0eeb241b21362f9986f523bcea">vel_mov</a>, 0.1, 10);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            ImGui::Unindent();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (ImGui::CollapsingHeader(<span class="stringliteral">&quot;Controles&quot;</span>)){</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                ImGui::Separator();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                ImGui::BulletText(<span class="stringliteral">&quot;WASD para mover el objeto&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                ImGui::BulletText(<span class="stringliteral">&quot;Arrastre con el mouse para rotaciones&quot;</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                ImGui::BulletText(<span class="stringliteral">&quot;Presione R para deshacer todas las transformaciones&quot;</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                ImGui::Separator();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            ImGui::Text(<span class="stringliteral">&quot;Rendimiento %.3f ms/frame (%.1f FPS)&quot;</span>, 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        ImGui::End();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#afdbf56f28d86913955ad52bab5d5612c">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_im_gui_win.html#afdbf56f28d86913955ad52bab5d5612c">endMainWindow</a>()</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        ImGui::Render();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="namespace_im_gui_win.html#ad70310cae3f568bb6659fc1c5a135ed0">   72</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespace_im_gui_win.html#ad70310cae3f568bb6659fc1c5a135ed0">cleanAll</a>()</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ImGui_ImplOpenGL3_Shutdown();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ImGui_ImplGlfw_Shutdown();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        ImGui::DestroyContext();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="anamespace_im_gui_win_html_a823ad27e2d3d1c7f2c057dd07d38102e"><div class="ttname"><a href="namespace_im_gui_win.html#a823ad27e2d3d1c7f2c057dd07d38102e">ImGuiWin::render_shape</a></div><div class="ttdeci">bool render_shape</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:23</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a5deb1d776bcfe94c5d0a67968a8fe7a9"><div class="ttname"><a href="namespace_im_gui_win.html#a5deb1d776bcfe94c5d0a67968a8fe7a9">ImGuiWin::fondo</a></div><div class="ttdeci">ImVec4 fondo</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:19</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_afdbf56f28d86913955ad52bab5d5612c"><div class="ttname"><a href="namespace_im_gui_win.html#afdbf56f28d86913955ad52bab5d5612c">ImGuiWin::endMainWindow</a></div><div class="ttdeci">void endMainWindow()</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:66</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a36e8cb0eeb241b21362f9986f523bcea"><div class="ttname"><a href="namespace_im_gui_win.html#a36e8cb0eeb241b21362f9986f523bcea">ImGuiWin::vel_mov</a></div><div class="ttdeci">float vel_mov</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:24</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_add2e69787b404e558ef1735d2968a1aa"><div class="ttname"><a href="namespace_im_gui_win.html#add2e69787b404e558ef1735d2968a1aa">ImGuiWin::color_figura</a></div><div class="ttdeci">ImVec4 color_figura</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:20</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a109f538a7f4f491a1b593378ce6f304a"><div class="ttname"><a href="namespace_im_gui_win.html#a109f538a7f4f491a1b593378ce6f304a">ImGuiWin::renderMainWindow</a></div><div class="ttdeci">void renderMainWindow()</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:26</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_ad70310cae3f568bb6659fc1c5a135ed0"><div class="ttname"><a href="namespace_im_gui_win.html#ad70310cae3f568bb6659fc1c5a135ed0">ImGuiWin::cleanAll</a></div><div class="ttdeci">void cleanAll()</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:72</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html_a0535fd8ca21211c9cec184f93a793764"><div class="ttname"><a href="namespace_im_gui_win.html#a0535fd8ca21211c9cec184f93a793764">ImGuiWin::multicolor</a></div><div class="ttdeci">bool multicolor</div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:22</div></div>
+<div class="ttc" id="anamespace_im_gui_win_html"><div class="ttname"><a href="namespace_im_gui_win.html">ImGuiWin</a></div><div class="ttdef"><b>Definition:</b> imgui_win.hpp:18</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>

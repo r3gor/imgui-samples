@@ -44,7 +44,7 @@ public:
     int width, heigth;
     glm::vec3 camera;
 
-    Shader sp{"src/vertex.glsl", "src/fragment.glsl"};
+    Shader ShaderProgram{"src/vertex.glsl", "src/fragment.glsl"};
     
     Shape myShape;
 };
@@ -94,8 +94,8 @@ void AppOpenGL::init()
 
 void AppOpenGL::setup()
 {
-    sp.compile();
-    sp.bind();
+	ShaderProgram.compile();
+	ShaderProgram.bind();
 
     int w, h;
     glfwGetWindowSize(window, &w, &h);
@@ -110,19 +110,19 @@ void AppOpenGL::setup()
 
 void AppOpenGL::display()
 {
-    sp.bind();
+	ShaderProgram.bind();
 
     modelviewMat = viewMat;
     modelviewMat *= Controls::getTransf();
 
-    sp.setUniformMat4fv("mv_matrix", modelviewMat);
-    sp.setUniformMat4fv("proj_matrix", Controls::pMat);
+    ShaderProgram.setUniformMat4fv("mv_matrix", modelviewMat);
+    ShaderProgram.setUniformMat4fv("proj_matrix", Controls::pMat);
 
     if (ImGuiWin::multicolor == false){
-        sp.setUniform1i("multicolor", 0);
+    	ShaderProgram.setUniform1i("multicolor", 0);
     }
     if (ImGuiWin::multicolor == true){
-        sp.setUniform1i("multicolor", 1);
+    	ShaderProgram.setUniform1i("multicolor", 1);
     } 
 
     Controls::velocidadMov = ImGuiWin::vel_mov;
@@ -145,7 +145,7 @@ void AppOpenGL::display()
                       ImGuiWin::color_figura.y,
                       ImGuiWin::color_figura.z);
 
-    sp.setUniform3fv("u_color", color);
+    ShaderProgram.setUniform3fv("u_color", color);
 
     if (ImGuiWin::render_shape)
     {
